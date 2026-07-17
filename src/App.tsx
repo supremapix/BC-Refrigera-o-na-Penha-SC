@@ -13,6 +13,7 @@ import { ServicePage } from './pages/ServicePage';
 import { LocationPage } from './pages/LocationPage';
 import { ContatoPage } from './pages/ContatoPage';
 import { NotFound } from './pages/NotFound';
+import { FloatingUtilities } from './components/FloatingUtilities';
 
 // Simple helper to scroll to top on every navigation transition
 function ScrollToTop() {
@@ -59,6 +60,9 @@ export default function App() {
           
           {/* Corporate Footer */}
           <Footer />
+          
+          {/* Back to top & Share Utilities */}
+          <FloatingUtilities />
         </div>
       </BrowserRouter>
     </HelmetProvider>
