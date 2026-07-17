@@ -24,6 +24,8 @@ import { InstagramFeed } from '../components/InstagramFeed';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 import { VideoSection } from '../components/VideoSection';
 import { PagePromoImage } from '../components/PagePromoImage';
+import { HeroBackgroundVideo } from '../components/HeroBackgroundVideo';
+import { HeroTypewriter } from '../components/HeroTypewriter';
 
 export const Home: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -119,83 +121,143 @@ export const Home: React.FC = () => {
         schema={[homeSchema, faqSchema]}
       />
 
-      {/* 1. HERO SECTION WITH COLD PREMIUM SVG & GLOWS */}
-      <section className="relative bg-gradient-to-b from-[#051726] to-[#0A2540] text-white py-20 lg:py-32 px-4 overflow-hidden border-b border-slate-900">
+      {/* 1. HERO SECTION WITH VIDEO BACKGROUND & LIVE TYPEWRITER */}
+      <section className="relative bg-[#051726] text-white pt-16 pb-28 lg:pt-28 lg:pb-36 px-4 overflow-hidden border-b border-slate-900">
         
-        {/* Subtle ice geometric crystals / background glows */}
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#22C7E5]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-[#0E86D4]/10 rounded-full blur-3xl pointer-events-none" />
-        
-        {/* SVG Frost Pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay">
-          <svg width="100%" height="100%">
-            <defs>
-              <pattern id="frost-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M30,0 L30,60 M0,30 L60,30 M15,15 L45,45 M15,45 L45,15" stroke="white" strokeWidth="1" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#frost-pattern)" />
-          </svg>
-        </div>
+        {/* Dynamic Background Video Component */}
+        <HeroBackgroundVideo />
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20">
           
           {/* Hero text (7 cols) */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
             
-            {/* Badges */}
-            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-              <span className="inline-flex items-center gap-1.5 bg-[#22C55E]/15 border border-[#22C55E]/30 text-[#22C55E] text-xs font-black tracking-wide uppercase px-3.5 py-1.5 rounded-full shadow-inner animate-pulse">
-                <Sparkles size={11} />
-                <span>Atendimento de Emergência 24h</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 bg-[#22C7E5]/15 border border-[#22C7E5]/30 text-[#22C7E5] text-xs font-black tracking-wide uppercase px-3.5 py-1.5 rounded-full shadow-inner">
-                <Shield size={11} />
-                <span>+10 Anos de Experiência</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 bg-[#FF7A1A]/15 border border-[#FF7A1A]/30 text-[#FF7A1A] text-xs font-black tracking-wide uppercase px-3.5 py-1.5 rounded-full shadow-inner">
-                <MapPin size={11} />
-                <span>Raio de atuação: 200 km</span>
-              </span>
+            {/* Centered Logo for Mobile/Tablet */}
+            <div className="lg:hidden flex justify-center mb-6 select-none">
+              <Logo size="lg" className="hover:scale-105 transition-transform duration-300" />
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-tight leading-tight">
-              Refrigeração Comercial e <br className="hidden sm:inline" />
-              Conserto de <span className="text-[#22C7E5] bg-clip-text">Container Reefer</span> <br className="hidden sm:inline" />
-              em Penha e Região
-            </h1>
-
-            <p className="text-slate-300 text-xs sm:text-base lg:text-lg font-semibold leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Mão de obra homologada de alta performance. Realizamos manutenção especializada em <span className="text-white font-bold">Containers Refrigerados (Reefer)</span>, máquinas <span className="text-white font-bold">Lava e Seca</span>, sistemas de <span className="text-white font-bold">Ar-Condicionado</span>, além de possuirmos uma completa loja de peças e assistência para câmaras frigoríficas industriais de grande porte.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-              <a 
-                id="hero-cta-whatsapp"
-                href={companyData.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#FF7A1A] hover:bg-[#E5640A] text-white px-8 py-4 rounded-2xl font-black text-lg tracking-wide transition-all shadow-[0_4px_25px_rgba(255,122,26,0.4)] hover:shadow-[0_4px_35px_rgba(255,122,26,0.6)] flex items-center justify-center gap-2 active:scale-95 group overflow-hidden relative"
-              >
-                <span className="absolute inset-0 w-full h-full bg-white/10 -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-                <MessageCircle size={22} className="animate-bounce" />
-                <span>Falar no WhatsApp (Orçamento)</span>
-              </a>
-              
-              <a 
-                id="hero-cta-services"
-                href="#services-grid-section" 
-                className="border border-slate-700 hover:border-slate-500 bg-[#051726]/40 text-slate-200 hover:text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all flex items-center justify-center gap-1.5 hover:bg-[#0A2540]/60 active:scale-95"
-              >
-                <span>Ver Serviços</span>
-                <ChevronRight size={18} />
-              </a>
+            {/* Advanced Typewriter component replacing static h1 and p */}
+            <div className="w-full">
+              <HeroTypewriter />
             </div>
+
           </div>
 
           {/* Large decorative Official Logo with premium animations on the right (5 cols) */}
           <div className="lg:col-span-5 hidden lg:flex justify-center relative select-none">
             <Logo size="xl" />
+          </div>
+        </div>
+
+        {/* Dynamic High-Speed Interactive Marquee (Letreiro Rodapé) */}
+        <div className="absolute bottom-0 left-0 right-0 bg-[#061B2E]/95 backdrop-blur-md border-t border-[#22C7E5]/25 py-4 overflow-hidden z-30 select-none shadow-[0_-4px_30px_rgba(5,23,38,0.9)]">
+          <div className="animate-marquee-fast flex items-center gap-12 text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-100">
+            {/* Set 1 */}
+            <a 
+              href={companyData.phoneLink}
+              className="inline-flex items-center gap-2 hover:text-[#22C7E5] transition-colors font-black shrink-0"
+              title="Ligar Agora"
+            >
+              <Phone size={14} className="text-[#22C7E5] animate-bounce" />
+              <span>LIGUE: {companyData.phone}</span>
+            </a>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <a 
+              href={companyData.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-[#22C55E] transition-colors font-black shrink-0"
+              title="Chamar no WhatsApp"
+            >
+              <MessageCircle size={14} className="text-[#22C55E] animate-pulse" />
+              <span>WHATSAPP PLANTÃO: {companyData.phone}</span>
+            </a>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <a 
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-[#FF7A1A] transition-colors shrink-0"
+              title="Como Chegar"
+            >
+              <MapPin size={14} className="text-[#FF7A1A]" />
+              <span>ENDEREÇO: {companyData.address}, {companyData.neighborhood}, {companyData.city} - {companyData.stateShort}</span>
+            </a>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Clock size={14} className="text-[#22C7E5]" />
+              <span>PLANTÃO EMERGENCIAL REEFER 24H</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Shield size={14} className="text-[#22C55E]" />
+              <span>GARANTIA DE 90 DIAS EM TODOS OS CONSERTOS</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Truck size={14} className="text-[#FF7A1A]" />
+              <span>FROTA PRÓPRIA COM TÉCNICOS ESPECIALISTAS</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Sparkles size={14} className="text-yellow-400" />
+              <span>MAIS DE 30 CIDADES ATENDIDAS EM SANTA CATARINA</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+
+            {/* Set 2 (Identical duplicate for infinite seam-free loop) */}
+            <a 
+              href={companyData.phoneLink}
+              className="inline-flex items-center gap-2 hover:text-[#22C7E5] transition-colors font-black shrink-0"
+              title="Ligar Agora"
+            >
+              <Phone size={14} className="text-[#22C7E5] animate-bounce" />
+              <span>LIGUE: {companyData.phone}</span>
+            </a>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <a 
+              href={companyData.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-[#22C55E] transition-colors font-black shrink-0"
+              title="Chamar no WhatsApp"
+            >
+              <MessageCircle size={14} className="text-[#22C55E] animate-pulse" />
+              <span>WHATSAPP PLANTÃO: {companyData.phone}</span>
+            </a>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <a 
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-[#FF7A1A] transition-colors shrink-0"
+              title="Como Chegar"
+            >
+              <MapPin size={14} className="text-[#FF7A1A]" />
+              <span>ENDEREÇO: {companyData.address}, {companyData.neighborhood}, {companyData.city} - {companyData.stateShort}</span>
+            </a>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Clock size={14} className="text-[#22C7E5]" />
+              <span>PLANTÃO EMERGENCIAL REEFER 24H</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Shield size={14} className="text-[#22C55E]" />
+              <span>GARANTIA DE 90 DIAS EM TODOS OS CONSERTOS</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Truck size={14} className="text-[#FF7A1A]" />
+              <span>FROTA PRÓPRIA COM TÉCNICOS ESPECIALISTAS</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
+            <span className="inline-flex items-center gap-2 text-slate-200 shrink-0">
+              <Sparkles size={14} className="text-yellow-400" />
+              <span>MAIS DE 30 CIDADES ATENDIDAS EM SANTA CATARINA</span>
+            </span>
+            <span className="text-[#22C7E5]/40 shrink-0">•</span>
           </div>
         </div>
       </section>

@@ -31,3 +31,23 @@ h1, h2, h3, h4, h5, h6 {
 .scroll-margin-top-24 {
   scroll-margin-top: 6rem;
 }
+
+/* Seamless infinite fast marquee */
+@keyframes marqueeFast {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-fast {
+  display: flex;
+  width: max-content;
+  animation: marqueeFast 20s linear infinite;
+}
+
+.animate-marquee-fast:hover {
+  animation-play-state: paused;
+}

@@ -19,6 +19,7 @@ import { servicesData, companyData, cidadesAtendidas, bairrosPenha, getServiceTe
 import { EnhancedSEO } from '../components/EnhancedSEO';
 import { PagePromoImage } from '../components/PagePromoImage';
 import { VideoSection } from '../components/VideoSection';
+import { HeroBackgroundVideo } from '../components/HeroBackgroundVideo';
 
 export const ServicePage: React.FC = () => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
@@ -146,11 +147,11 @@ export const ServicePage: React.FC = () => {
       </div>
 
       {/* Hero section */}
-      <section className="relative bg-gradient-to-b from-[#051726] to-[#0A2540] text-white py-16 lg:py-24 px-4 overflow-hidden border-b border-slate-900">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#22C7E5]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+      <section className="relative bg-[#051726] text-white py-16 lg:py-24 px-4 overflow-hidden border-b border-slate-900">
+        <HeroBackgroundVideo />
+        <div className="max-w-5xl mx-auto text-center relative z-20">
           <motion.div 
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-[#22C7E5] font-mono text-xs uppercase tracking-wider mb-4 font-bold"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-[#22C7E5] font-mono text-xs uppercase tracking-wider mb-4 font-bold z-20"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -159,7 +160,7 @@ export const ServicePage: React.FC = () => {
             <span>Plantão de Atendimento em Penha e SC</span>
           </motion.div>
           <motion.h1 
-            className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-tight z-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -167,7 +168,7 @@ export const ServicePage: React.FC = () => {
             {service.headline}
           </motion.h1>
           <motion.p 
-            className="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base font-medium"
+            className="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base font-medium z-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -175,7 +176,7 @@ export const ServicePage: React.FC = () => {
             {service.shortDesc}
           </motion.p>
           <motion.div 
-            className="mt-8 flex flex-col sm:flex-row justify-center gap-4"
+            className="mt-8 flex flex-col sm:flex-row justify-center gap-4 z-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -184,14 +185,14 @@ export const ServicePage: React.FC = () => {
               href={waUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-[#FF7A1A] hover:bg-[#E5640A] text-white px-8 py-4 rounded-2xl font-black text-lg tracking-wide transition-all shadow-[0_4px_20px_rgba(255,122,26,0.4)] hover:shadow-[0_4px_25px_rgba(255,122,26,0.6)] flex items-center justify-center gap-2"
+              className="bg-[#FF7A1A] hover:bg-[#E5640A] text-white px-8 py-4 rounded-2xl font-black text-lg tracking-wide transition-all shadow-[0_4px_20px_rgba(255,122,26,0.4)] hover:shadow-[0_4px_25px_rgba(255,122,26,0.6)] flex items-center justify-center gap-2 relative z-30"
             >
               <MessageCircle size={22} className="animate-bounce" />
               <span>Solicitar Orçamento Grátis</span>
             </a>
             <a 
               href={`tel:+554733059452`} 
-              className="border border-slate-700 hover:border-slate-500 bg-[#051726]/50 text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all flex items-center justify-center gap-2"
+              className="border border-slate-700 hover:border-slate-500 bg-[#051726]/50 text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all flex items-center justify-center gap-2 relative z-30"
             >
               <Phone size={20} className="text-[#22C7E5]" />
               <span>Ligar: (47) 3305-9452</span>

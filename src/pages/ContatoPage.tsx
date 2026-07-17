@@ -16,6 +16,7 @@ import { companyData } from '../data/siteData';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 import { PagePromoImage } from '../components/PagePromoImage';
 import { VideoSection } from '../components/VideoSection';
+import { HeroBackgroundVideo } from '../components/HeroBackgroundVideo';
 
 export const ContatoPage: React.FC = () => {
   const [name, setName] = useState('');
@@ -69,15 +70,15 @@ export const ContatoPage: React.FC = () => {
       />
 
       {/* Header Info */}
-      <section className="bg-gradient-to-b from-[#051726] to-[#0A2540] text-white py-16 px-4 text-center border-b border-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#22C7E5]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-4xl mx-auto relative z-10">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-[#22C7E5] font-mono text-xs uppercase tracking-widest font-black mb-4">
+      <section className="relative bg-[#051726] text-white py-16 px-4 text-center border-b border-slate-900 overflow-hidden">
+        <HeroBackgroundVideo />
+        <div className="max-w-4xl mx-auto relative z-20">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-[#22C7E5] font-mono text-xs uppercase tracking-widest font-black mb-4 z-20">
             <Sparkles size={12} className="animate-pulse" />
             <span>Contato Direto</span>
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight">Fale Conosco &amp; Peça Orçamento</h1>
-          <p className="mt-4 text-slate-300 max-w-xl mx-auto text-xs sm:text-base font-semibold leading-relaxed">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight z-20">Fale Conosco &amp; Peça Orçamento</h1>
+          <p className="mt-4 text-slate-300 max-w-xl mx-auto text-xs sm:text-base font-semibold leading-relaxed z-20">
             Estamos prontos para atender seu chamado residencial, comercial, industrial ou emergencial reefer de forma ágil em toda Penha e cidades de SC.
           </p>
         </div>

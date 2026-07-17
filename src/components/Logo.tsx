@@ -11,17 +11,17 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
 
   // Responsive and exact size mappings
   const dimensions = {
-    sm: { container: 'w-12 h-12', img: 'w-full h-full', border: 'p-[0.5px]' },
-    md: { container: 'w-16 h-16', img: 'w-full h-full', border: 'p-[1px]' },
-    lg: { container: 'w-32 h-32', img: 'w-full h-full', border: 'p-[1.5px]' },
-    xl: { container: 'w-64 h-64', img: 'w-full h-full', border: 'p-[2px]' },
+    sm: { container: 'w-12 h-12', img: 'w-full h-full', border: 'p-[1.5px]' },
+    md: { container: 'w-16 h-16', img: 'w-full h-full', border: 'p-[2px]' },
+    lg: { container: 'w-36 h-36 sm:w-40 sm:h-40', img: 'w-full h-full', border: 'p-[2px]' },
+    xl: { container: 'w-64 h-64 md:w-72 md:h-72', img: 'w-full h-full', border: 'p-[2.5px]' },
   }[size];
 
   // Adjust snowflake decoration offsets and sizes programmatically
   const starDimensions = {
     sm: { size1: 10, size2: 8, offset1: '-top-1 -right-1', offset2: '-bottom-0.5 -left-0.5' },
     md: { size1: 12, size2: 10, offset1: '-top-1.5 -right-1.5', offset2: '-bottom-1 -left-1' },
-    lg: { size1: 20, size2: 16, offset1: '-top-2 -right-2', offset2: '-bottom-1.5 -left-1.5' },
+    lg: { size1: 22, size2: 18, offset1: '-top-2 -right-2', offset2: '-bottom-1.5 -left-1.5' },
     xl: { size1: 32, size2: 26, offset1: '-top-4 -right-4', offset2: '-bottom-3 -left-3' },
   }[size];
 
@@ -29,13 +29,13 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
     <div className={`relative flex items-center justify-center select-none ${className}`}>
       {/* 1. Ice aura glowing halo (idle breathing aura, expands and shines brighter) */}
       <motion.div
-        className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#22C7E5]/30 via-[#0E86D4]/20 to-transparent blur-xl pointer-events-none"
+        className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#22C7E5]/50 via-[#0E86D4]/35 to-transparent blur-2xl pointer-events-none"
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.6, 0.9, 0.6],
+          scale: [1, 1.25, 1],
+          opacity: [0.7, 1.0, 0.7],
         }}
         transition={{
-          duration: 4,
+          duration: 3.5,
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -43,10 +43,10 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
 
       {/* 2. Rotating external ice-shards boundary ring */}
       <motion.div
-        className="absolute inset-[-4px] rounded-full border border-dashed border-[#22C7E5]/35 pointer-events-none"
+        className="absolute inset-[-6px] rounded-full border-2 border-dashed border-[#22C7E5]/50 pointer-events-none"
         animate={{ rotate: 360 }}
         transition={{
-          duration: 25,
+          duration: 20,
           repeat: Infinity,
           ease: "linear"
         }}
@@ -54,10 +54,10 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
 
       {/* 3. Second fast counter-rotating inner orbital border for premium visual weight */}
       <motion.div
-        className="absolute inset-[-8px] rounded-full border border-dotted border-[#0E86D4]/20 pointer-events-none"
+        className="absolute inset-[-12px] rounded-full border border-dotted border-[#0E86D4]/40 pointer-events-none"
         animate={{ rotate: -360 }}
         transition={{
-          duration: 40,
+          duration: 30,
           repeat: Infinity,
           ease: "linear"
         }}
@@ -65,7 +65,7 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
 
       {/* 4. Outer Container with Frosted-Glass Border Gradient */}
       <motion.div
-        className={`relative ${dimensions.container} rounded-full bg-gradient-to-br from-[#22C7E5] via-[#0E86D4] to-[#051726] ${dimensions.border} shadow-[0_0_20px_rgba(34,199,229,0.35)] flex items-center justify-center overflow-hidden`}
+        className={`relative ${dimensions.container} rounded-full bg-gradient-to-br from-[#22C7E5] via-[#0E86D4] to-[#22C7E5] ${dimensions.border} shadow-[0_0_35px_rgba(34,199,229,0.55)] flex items-center justify-center overflow-hidden`}
         whileHover={{
           scale: 1.06,
           rotate: -1.5,
@@ -87,7 +87,7 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
           <img
             src={logoUrl}
             alt="BC Refrigeração Logo Oficial"
-            className={`${dimensions.img} object-contain z-10 transition-transform duration-500 group-hover:scale-105`}
+            className={`${dimensions.img} object-contain z-10 transition-transform duration-500 scale-[1.32] hover:scale-[1.38]`}
             referrerPolicy="no-referrer"
           />
 

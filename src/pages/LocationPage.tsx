@@ -17,6 +17,7 @@ import { allLocations, companyData, servicesData, LocationItem } from '../data/s
 import { EnhancedSEO } from '../components/EnhancedSEO';
 import { PagePromoImage } from '../components/PagePromoImage';
 import { VideoSection } from '../components/VideoSection';
+import { HeroBackgroundVideo } from '../components/HeroBackgroundVideo';
 
 export const LocationPage: React.FC = () => {
   const { cidade, bairro } = useParams<{ cidade?: string; bairro?: string }>();
@@ -155,11 +156,11 @@ export const LocationPage: React.FC = () => {
       </div>
 
       {/* Hero Banner Area */}
-      <section className="relative bg-gradient-to-b from-[#051726] to-[#0A2540] text-white py-16 lg:py-20 px-4 border-b border-slate-900 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#22C7E5]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+      <section className="relative bg-[#051726] text-white py-16 lg:py-20 px-4 border-b border-slate-900 overflow-hidden">
+        <HeroBackgroundVideo />
+        <div className="max-w-5xl mx-auto text-center relative z-20">
           <motion.div 
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-800/70 border border-slate-700 text-[#22C7E5] font-mono text-xs uppercase tracking-widest font-black mb-4"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-800/70 border border-slate-700 text-[#22C7E5] font-mono text-xs uppercase tracking-widest font-black mb-4 z-20"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
@@ -168,7 +169,7 @@ export const LocationPage: React.FC = () => {
             <span>Região Atendida: {region}</span>
           </motion.div>
           <motion.h1 
-            className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight"
+            className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight z-20"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -176,7 +177,7 @@ export const LocationPage: React.FC = () => {
             Refrigeração em {name} | Conserto de Container Reefer, Ar-Condicionado e Lava e Seca
           </motion.h1>
           <motion.p 
-            className="mt-4 text-slate-300 max-w-3xl mx-auto text-xs sm:text-base font-semibold leading-relaxed"
+            className="mt-4 text-slate-300 max-w-3xl mx-auto text-xs sm:text-base font-semibold leading-relaxed z-20"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -185,7 +186,7 @@ export const LocationPage: React.FC = () => {
           </motion.p>
           {!isBairro && (
             <motion.p 
-              className="mt-2 text-xs text-[#22C7E5] font-mono font-bold uppercase"
+              className="mt-2 text-xs text-[#22C7E5] font-mono font-bold uppercase z-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
