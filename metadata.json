@@ -1,0 +1,6 @@
+{
+  "name": "BC Refrigeração",
+  "description": "Site profissional da BC Refrigeração - Conserto de Container Reefer, Ar-Condicionado, Lava e Seca e Refrigeração Comercial em Penha e região de Santa Catarina.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

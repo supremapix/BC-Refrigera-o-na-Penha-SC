@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* Set typeface bindings */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-title: "Sora", "Inter", sans-serif;
+
+  /* Cold Premium Palette Definitions */
+  --color-ice-950: #051726;
+  --color-ice-900: #0A2540;
+  --color-ice-700: #0E4C7A;
+  --color-blue-500: #0E86D4;
+  --color-cyan-400: #22C7E5;
+  --color-frost-100: #E8F6FB;
+  --color-cta-500: #FF7A1A;
+  --color-cta-600: #E5640A;
+  --color-success-500: #22C55E;
+}
+
+/* Custom global styling overlays */
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+}
+
+/* Custom scroll margin compensation for sticky header */
+.scroll-margin-top-24 {
+  scroll-margin-top: 6rem;
+}
