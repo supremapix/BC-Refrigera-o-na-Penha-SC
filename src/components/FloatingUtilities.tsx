@@ -121,8 +121,8 @@ export const FloatingUtilities: React.FC = () => {
 
   return (
     <>
-      {/* Floating Buttons Group - Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      {/* Floating Buttons Group - Bottom Left (to avoid overlapping with floating WhatsApp on the right) */}
+      <div className="fixed bottom-20 lg:bottom-6 left-4 lg:left-6 z-50 flex flex-col gap-3">
         {/* Share Button (Always Visible) */}
         <motion.button
           onClick={() => setIsShareOpen(true)}
