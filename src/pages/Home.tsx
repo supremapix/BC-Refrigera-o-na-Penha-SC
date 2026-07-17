@@ -115,7 +115,7 @@ export const Home: React.FC = () => {
   return (
     <div className="bg-slate-50 font-sans text-slate-800 pb-16">
       <EnhancedSEO
-        title="Refrigeração Comercial, Container Reefer e Lava e Seca em Penha SC"
+        title="BC Refrigeração | Container Reefer e Lava e Seca em Penha SC"
         description="BC Refrigeração: Especialista em Conserto de Container Reefer, Máquina Lava e Seca, Ar-Condicionado, Câmara Fria e Geladeiras em Penha e toda SC. Ligue (47) 3305-9452."
         canonicalPath="/"
         schema={[homeSchema, faqSchema]}

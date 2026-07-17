@@ -25,7 +25,9 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   geoPosition,
   geoPlacename
 }) => {
-  const fullTitle = `${title} | ${companyData.name} Penha SC`;
+  const fullTitle = title.includes(companyData.name)
+    ? title
+    : `${title} | ${companyData.name}`;
   const canonicalUrl = `https://www.bcrefrigeracaosc.com.br${canonicalPath}`;
   
   const defaultKeywords = [
@@ -111,7 +113,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   return (
     <Helmet>
       {/* Basic elements */}
-      <title>{fullTitle.substring(0, 60)}</title>
+      <title>{fullTitle}</title>
       <meta name="description" content={description.substring(0, 160)} />
       <meta name="keywords" content={mergedKeywords.join(', ')} />
       <link rel="canonical" href={canonicalUrl} />
