@@ -14,6 +14,32 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Lava e Seca SEO & Landing Pages -->
+  <url>
+    <loc>https://www.bcrefrigeracaosc.com.br/conserto-lava-e-seca-penha-sc</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bcrefrigeracaosc.com.br/assistencia-lava-e-seca-lg-penha</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bcrefrigeracaosc.com.br/assistencia-lava-e-seca-samsung-penha</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bcrefrigeracaosc.com.br/blog/lava-e-seca-penha-sc-guia-completo</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- 9 Core Services -->
   <url>
     <loc>https://www.bcrefrigeracaosc.com.br/servicos/conserto-container-reefer</loc>

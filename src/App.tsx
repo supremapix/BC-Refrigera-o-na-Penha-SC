@@ -13,6 +13,10 @@ import { ServicePage } from './pages/ServicePage';
 import { LocationPage } from './pages/LocationPage';
 import { ContatoPage } from './pages/ContatoPage';
 import { NotFound } from './pages/NotFound';
+import { ConsertoLavaESecaPage } from './pages/ConsertoLavaESecaPage';
+import { LavaESecaLGPage } from './pages/LavaESecaLGPage';
+import { LavaESecaSamsungPage } from './pages/LavaESecaSamsungPage';
+import { BlogLavaESecaPage } from './pages/BlogLavaESecaPage';
 import { FloatingUtilities } from './components/FloatingUtilities';
 
 // Simple helper to scroll to top on every navigation transition
@@ -43,6 +47,12 @@ export default function App() {
               
               {/* Contato Page Route */}
               <Route path="/contato" element={<ContatoPage />} />
+
+              {/* Lava e Seca SEO & Landing Pages */}
+              <Route path="/conserto-lava-e-seca-penha-sc" element={<ConsertoLavaESecaPage />} />
+              <Route path="/assistencia-lava-e-seca-lg-penha" element={<LavaESecaLGPage />} />
+              <Route path="/assistencia-lava-e-seca-samsung-penha" element={<LavaESecaSamsungPage />} />
+              <Route path="/blog/lava-e-seca-penha-sc-guia-completo" element={<BlogLavaESecaPage />} />
               
               {/* Core 9 Service Pages Route */}
               <Route path="/servicos/:serviceSlug" element={<ServicePage />} />

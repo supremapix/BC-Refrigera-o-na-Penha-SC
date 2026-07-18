@@ -334,6 +334,32 @@ export const Home: React.FC = () => {
               </div>
             </Link>
           ))}
+
+          {/* Conserto de Lava e Seca Landing Card (Task 5.1) */}
+          <Link
+            to="/conserto-lava-e-seca-penha-sc"
+            id="service-card-lava-e-seca"
+            className="bg-white border border-slate-200/80 rounded-3xl p-6 shadow-sm hover:shadow-[0_15px_30px_rgba(34,199,229,0.1)] hover:border-[#FF7A1A]/50 transition-all duration-300 group flex flex-col justify-between"
+          >
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-[#FF7A1A]/5 text-[#FF7A1A] group-hover:text-white group-hover:bg-[#FF7A1A] flex items-center justify-center transition-all duration-300 shadow-inner mb-5 font-black text-xl">
+                <span>🧺</span>
+              </div>
+              
+              <h3 className="text-base sm:text-lg font-black text-slate-950 uppercase group-hover:text-[#FF7A1A] transition-colors tracking-tight">
+                Conserto de Lava e Seca
+              </h3>
+              
+              <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold">
+                Assistência técnica de máquina lava e seca em Penha SC. Conserto LG, Samsung, Electrolux e Brastemp com atendimento rápido em domicílio.
+              </p>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#FF7A1A]">
+              <span className="group-hover:underline font-extrabold">Ver Páginas &amp; Orçamento</span>
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1 text-[#FF7A1A]" />
+            </div>
+          </Link>
         </div>
       </section>
 
