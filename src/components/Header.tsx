@@ -135,20 +135,65 @@ export const Header: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute left-1/2 -translate-x-1/2 mt-1 w-80 bg-[#0A2540] border border-slate-800 rounded-2xl shadow-2xl p-4 grid grid-cols-1 gap-2 z-50 overflow-hidden"
+                    className="absolute left-1/2 -translate-x-1/2 mt-1 w-[420px] bg-[#0A2540] border border-slate-800 rounded-2xl shadow-2xl p-4 grid grid-cols-1 gap-3 z-50 overflow-hidden"
                   >
-                    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#0E86D4] to-[#22C7E5]" />
-                    <span className="text-xs uppercase tracking-wider font-bold text-[#22C7E5] mb-1 px-2 block">Soluções Especializadas</span>
-                    {servicesData.map((s) => (
-                      <Link 
-                        key={s.id} 
-                        to={`/servicos/${s.slug}`} 
-                        className="p-2 rounded-xl hover:bg-[#051726] hover:text-[#22C7E5] text-slate-300 transition-all text-xs flex items-center gap-2.5"
-                      >
-                        <span className="text-[#22C7E5]">❄️</span>
-                        <div className="font-semibold">{s.title}</div>
-                      </Link>
-                    ))}
+                    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#0E86D4] via-[#22C7E5] to-[#FF7A1A]" />
+                    
+                    {/* Refrigeração Comercial e Industrial */}
+                    <div>
+                      <span className="text-[11px] uppercase tracking-wider font-black text-[#FF7A1A] mb-1.5 px-2 block border-b border-slate-800 pb-1">
+                        🏢 Refrigeração Comercial e Industrial
+                      </span>
+                      <div className="grid grid-cols-1 gap-1">
+                        <Link 
+                          to="/maquina-de-gelo-comercial-industrial" 
+                          className="p-2 rounded-xl hover:bg-[#051726] hover:text-[#22C7E5] text-slate-200 transition-all text-xs flex items-center gap-2 font-bold"
+                        >
+                          <span className="text-[#22C7E5]">❄️</span>
+                          <span>Máquina de Gelo Comercial e Industrial</span>
+                        </Link>
+                        <Link 
+                          to="/maquina-de-sorvete-comercial-industrial" 
+                          className="p-2 rounded-xl hover:bg-[#051726] hover:text-[#22C7E5] text-slate-200 transition-all text-xs flex items-center gap-2 font-bold"
+                        >
+                          <span className="text-[#22C7E5]">❄️</span>
+                          <span>Máquina de Sorvete Comercial e Industrial</span>
+                        </Link>
+                        <Link 
+                          to="/chopeiras" 
+                          className="p-2 rounded-xl hover:bg-[#051726] hover:text-[#22C7E5] text-slate-200 transition-all text-xs flex items-center gap-2 font-bold"
+                        >
+                          <span className="text-[#22C7E5]">❄️</span>
+                          <span>Chopeiras</span>
+                        </Link>
+                        <Link 
+                          to="/sistema-rak" 
+                          className="p-2 rounded-xl hover:bg-[#051726] hover:text-[#22C7E5] text-slate-200 transition-all text-xs flex items-center gap-2 font-bold"
+                        >
+                          <span className="text-[#22C7E5]">❄️</span>
+                          <span>Sistema RAK</span>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Standard Services */}
+                    <div>
+                      <span className="text-[11px] uppercase tracking-wider font-black text-[#22C7E5] mb-1.5 px-2 block border-b border-slate-800 pb-1">
+                        ❄️ Demais Especialidades
+                      </span>
+                      <div className="grid grid-cols-1 gap-1 max-h-60 overflow-y-auto pr-1">
+                        {servicesData.map((s) => (
+                          <Link 
+                            key={s.id} 
+                            to={`/servicos/${s.slug}`} 
+                            className="p-1.5 rounded-lg hover:bg-[#051726] hover:text-[#22C7E5] text-slate-300 transition-all text-xs flex items-center gap-2 font-medium"
+                          >
+                            <span className="text-[#22C7E5]/70 text-[10px]">🔹</span>
+                            <div className="truncate">{s.title}</div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -313,13 +358,53 @@ export const Header: React.FC = () => {
               </Link>
               
               <div className="py-2">
-                <span className="block text-xs uppercase tracking-wider font-bold text-[#22C7E5] mb-2 px-2">Nossos Serviços (Toque para abrir)</span>
+                <span className="block text-xs uppercase tracking-wider font-extrabold text-[#FF7A1A] mb-2 px-2 border-b border-slate-800/80 pb-1">
+                  🏢 Refrigeração Comercial e Industrial
+                </span>
+                <div className="grid grid-cols-1 gap-1 mb-4">
+                  <Link
+                    to="/maquina-de-gelo-comercial-industrial"
+                    className="flex items-center gap-3 py-3 px-4 text-base font-extrabold text-white bg-[#0A2540] hover:bg-slate-800 rounded-xl min-h-[56px] transition-all border-l-4 border-[#FF7A1A]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>❄️</span>
+                    <span>Máquina de Gelo Comercial e Industrial</span>
+                  </Link>
+                  <Link
+                    to="/maquina-de-sorvete-comercial-industrial"
+                    className="flex items-center gap-3 py-3 px-4 text-base font-extrabold text-white bg-[#0A2540] hover:bg-slate-800 rounded-xl min-h-[56px] transition-all border-l-4 border-[#FF7A1A]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>❄️</span>
+                    <span>Máquina de Sorvete Comercial e Industrial</span>
+                  </Link>
+                  <Link
+                    to="/chopeiras"
+                    className="flex items-center gap-3 py-3 px-4 text-base font-extrabold text-white bg-[#0A2540] hover:bg-slate-800 rounded-xl min-h-[56px] transition-all border-l-4 border-[#FF7A1A]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>❄️</span>
+                    <span>Chopeiras</span>
+                  </Link>
+                  <Link
+                    to="/sistema-rak"
+                    className="flex items-center gap-3 py-3 px-4 text-base font-extrabold text-white bg-[#0A2540] hover:bg-slate-800 rounded-xl min-h-[56px] transition-all border-l-4 border-[#FF7A1A]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>❄️</span>
+                    <span>Sistema RAK</span>
+                  </Link>
+                </div>
+
+                <span className="block text-xs uppercase tracking-wider font-bold text-[#22C7E5] mb-2 px-2 border-b border-slate-800/80 pb-1">
+                  ❄️ Demais Serviços
+                </span>
                 <div className="grid grid-cols-1 gap-1">
                   {servicesData.map((s) => (
                     <Link
                       key={s.id}
                       to={`/servicos/${s.slug}`}
-                      className="flex items-center gap-3 py-3 px-4 text-lg font-bold text-slate-200 hover:text-white hover:bg-slate-800/50 rounded-xl min-h-[56px] transition-all border-l-4 border-[#0E86D4]"
+                      className="flex items-center gap-3 py-3 px-4 text-base font-bold text-slate-200 hover:text-white hover:bg-slate-800/50 rounded-xl min-h-[56px] transition-all border-l-4 border-[#0E86D4]"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       <span>❄️</span>

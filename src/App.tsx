@@ -17,6 +17,10 @@ import { ConsertoLavaESecaPage } from './pages/ConsertoLavaESecaPage';
 import { LavaESecaLGPage } from './pages/LavaESecaLGPage';
 import { LavaESecaSamsungPage } from './pages/LavaESecaSamsungPage';
 import { BlogLavaESecaPage } from './pages/BlogLavaESecaPage';
+import { MaquinaGeloPage } from './pages/MaquinaGeloPage';
+import { MaquinaSorvetePage } from './pages/MaquinaSorvetePage';
+import { ChopeirasPage } from './pages/ChopeirasPage';
+import { SistemaRakPage } from './pages/SistemaRakPage';
 import { FloatingUtilities } from './components/FloatingUtilities';
 
 // Simple helper to scroll to top on every navigation transition
@@ -53,6 +57,16 @@ export default function App() {
               <Route path="/assistencia-lava-e-seca-lg-penha" element={<LavaESecaLGPage />} />
               <Route path="/assistencia-lava-e-seca-samsung-penha" element={<LavaESecaSamsungPage />} />
               <Route path="/blog/lava-e-seca-penha-sc-guia-completo" element={<BlogLavaESecaPage />} />
+              
+              {/* Refrigeração Comercial e Industrial Routes */}
+              <Route path="/maquina-de-gelo-comercial-industrial" element={<MaquinaGeloPage />} />
+              <Route path="/maquina-de-gelo-comercial-industrial/" element={<MaquinaGeloPage />} />
+              <Route path="/maquina-de-sorvete-comercial-industrial" element={<MaquinaSorvetePage />} />
+              <Route path="/maquina-de-sorvete-comercial-industrial/" element={<MaquinaSorvetePage />} />
+              <Route path="/chopeiras" element={<ChopeirasPage />} />
+              <Route path="/chopeiras/" element={<ChopeirasPage />} />
+              <Route path="/sistema-rak" element={<SistemaRakPage />} />
+              <Route path="/sistema-rak/" element={<SistemaRakPage />} />
               
               {/* Core 9 Service Pages Route */}
               <Route path="/servicos/:serviceSlug" element={<ServicePage />} />

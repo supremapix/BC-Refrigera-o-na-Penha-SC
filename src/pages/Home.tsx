@@ -295,7 +295,161 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. GRID OF SERVICES (9 cards, hover with glow) */}
+      {/* 3. REFRIGERAÇÃO COMERCIAL E INDUSTRIAL (NOVA SEÇÃO DE DESTAQUE) */}
+      <section id="commercial-industrial-section" className="py-16 px-4 max-w-7xl mx-auto font-sans">
+        <div className="bg-gradient-to-br from-[#051726] via-[#0A2540] to-[#051726] text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl relative overflow-hidden space-y-8">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF7A1A]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#22C7E5]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="text-center space-y-3 relative z-10 max-w-3xl mx-auto">
+            <span className="inline-block text-xs uppercase tracking-widest text-[#FF7A1A] font-extrabold bg-[#FF7A1A]/10 px-3.5 py-1 rounded-full border border-[#FF7A1A]/30">
+              Soluções para Empresas e Indústrias
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white">
+              Refrigeração Comercial e Industrial
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
+              Equipamentos de alta capacidade exigem suporte técnico especializado. Oferecemos manutenção preventiva, corretiva e assistência para o seu estabelecimento.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {/* Card 1: Máquina de Gelo */}
+            <div className="bg-[#0A2540]/80 border border-slate-700/80 hover:border-[#22C7E5] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+              <div className="space-y-3">
+                <div className="overflow-hidden rounded-xl border border-slate-700/60 aspect-[16/10] bg-slate-900">
+                  <img 
+                    src="https://img.supremasite.com.br/bc/maquina-de-gelo-comercial-industrial.jpg" 
+                    alt="Manutenção e conserto de máquina de gelo comercial e industrial - BC Refrigeração SC"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">🧊</span>
+                  <h3 className="text-base font-black uppercase text-white tracking-tight group-hover:text-[#22C7E5] transition-colors">
+                    Máquina de Gelo
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-300 font-medium leading-relaxed">
+                  Assistência técnica, limpeza higiênica e conserto de máquinas de gelo em cubos ou escamas.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-slate-800">
+                <Link 
+                  to="/maquina-de-gelo-comercial-industrial"
+                  className="w-full bg-[#0E86D4] hover:bg-[#0E4C7A] text-white text-xs font-black py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md"
+                >
+                  <span>SAIBA MAIS</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: Máquina de Sorvete */}
+            <div className="bg-[#0A2540]/80 border border-slate-700/80 hover:border-[#22C7E5] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+              <div className="space-y-3">
+                <div className="overflow-hidden rounded-xl border border-slate-700/60 aspect-[16/10] bg-slate-900">
+                  <img 
+                    src="https://img.supremasite.com.br/bc/maquina-de-sorvete-comercial-industrial.jpg" 
+                    alt="Assistência técnica em máquinas de sorvete comercial e industrial - BC Refrigeração SC"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">🍦</span>
+                  <h3 className="text-base font-black uppercase text-white tracking-tight group-hover:text-[#22C7E5] transition-colors">
+                    Máquina de Sorvete
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-300 font-medium leading-relaxed">
+                  Manutenção de congelamento e regulagem de calda para sorveterias e quiosques expresso.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-slate-800">
+                <Link 
+                  to="/maquina-de-sorvete-comercial-industrial"
+                  className="w-full bg-[#0E86D4] hover:bg-[#0E4C7A] text-white text-xs font-black py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md"
+                >
+                  <span>SAIBA MAIS</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3: Chopeiras */}
+            <div className="bg-[#0A2540]/80 border border-slate-700/80 hover:border-[#FF7A1A] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+              <div className="space-y-3">
+                <div className="overflow-hidden rounded-xl border border-slate-700/60 aspect-[16/10] bg-slate-900">
+                  <img 
+                    src="https://img.supremasite.com.br/bc/chopeiras-comerciais.jpg" 
+                    alt="Conserto e manutenção de chopeiras comerciais e profissionais - BC Refrigeração SC"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">🍺</span>
+                  <h3 className="text-base font-black uppercase text-white tracking-tight group-hover:text-[#FF7A1A] transition-colors">
+                    Chopeiras
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-300 font-medium leading-relaxed">
+                  Conserto e manutenção do sistema frigorífico de chopeiras comerciais e profissionais.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-slate-800">
+                <Link 
+                  to="/chopeiras"
+                  className="w-full bg-[#FF7A1A] hover:bg-[#E5640A] text-white text-xs font-black py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md"
+                >
+                  <span>SAIBA MAIS</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 4: Sistema RAK */}
+            <div className="bg-[#0A2540]/80 border border-slate-700/80 hover:border-[#22C7E5] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+              <div className="space-y-3">
+                <div className="overflow-hidden rounded-xl border border-slate-700/60 aspect-[16/10] bg-slate-900">
+                  <img 
+                    src="https://img.supremasite.com.br/bc/sistema-rak-refrigeracao-comercial-industrial.jpg" 
+                    alt="Manutenção e assistência técnica em Sistema RAK - BC Refrigeração SC"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">⚙️</span>
+                  <h3 className="text-base font-black uppercase text-white tracking-tight group-hover:text-[#22C7E5] transition-colors">
+                    Sistema RAK
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-300 font-medium leading-relaxed">
+                  Serviços técnicos e manutenção para central de refrigeração e Sistema RAK.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-slate-800">
+                <Link 
+                  to="/sistema-rak"
+                  className="w-full bg-[#0E86D4] hover:bg-[#0E4C7A] text-white text-xs font-black py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md"
+                >
+                  <span>SAIBA MAIS</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. GRID OF SERVICES (9 cards, hover with glow) */}
       <section id="services-grid-section" className="py-20 px-4 max-w-7xl mx-auto scroll-margin-top-24">
         <div className="text-center space-y-3 mb-16">
           <span className="inline-block text-xs uppercase tracking-widest text-[#0E86D4] font-black">Nosso Portfólio de Atendimento</span>

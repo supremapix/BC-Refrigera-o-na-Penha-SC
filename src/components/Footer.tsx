@@ -101,10 +101,30 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Col 3: Services (9 Pages) */}
+        {/* Col 3: Services */}
         <div className="space-y-4">
           <h3 className="text-sm uppercase tracking-widest font-black text-[#FF7A1A] border-b border-slate-800 pb-2">Nossas Especialidades</h3>
           <ul className="space-y-1.5 text-xs font-semibold text-slate-300">
+            <li>
+              <Link to="/maquina-de-gelo-comercial-industrial" className="hover:text-[#22C7E5] transition-colors py-0.5 block font-bold text-white truncate">
+                🧊 Máquina de Gelo
+              </Link>
+            </li>
+            <li>
+              <Link to="/maquina-de-sorvete-comercial-industrial" className="hover:text-[#22C7E5] transition-colors py-0.5 block font-bold text-white truncate">
+                🍦 Máquina de Sorvete
+              </Link>
+            </li>
+            <li>
+              <Link to="/chopeiras" className="hover:text-[#22C7E5] transition-colors py-0.5 block font-bold text-white truncate">
+                🍺 Chopeiras
+              </Link>
+            </li>
+            <li>
+              <Link to="/sistema-rak" className="hover:text-[#22C7E5] transition-colors py-0.5 block font-bold text-white truncate">
+                ⚙️ Sistema RAK
+              </Link>
+            </li>
             {servicesData.map(s => (
               <li key={s.id}>
                 <Link to={`/servicos/${s.slug}`} className="hover:text-[#22C7E5] transition-colors py-0.5 block truncate">
