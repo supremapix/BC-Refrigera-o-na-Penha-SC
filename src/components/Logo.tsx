@@ -7,7 +7,7 @@ interface LogoProps {
 }
 
 export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
-  const logoUrl = "https://img.novaspersianascuritiba.com.br/bc-logo.webp";
+  const logoUrl = "/bc-logo.png";
 
   // Responsive and exact size mappings
   const dimensions = {
@@ -83,11 +83,11 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
         {/* Inner solid deep ice chamber */}
         <div className="w-full h-full rounded-full bg-[#051726] flex items-center justify-center overflow-hidden relative">
           
-          {/* Logo WebP image */}
+          {/* Official logo bundled with the site */}
           <img
             src={logoUrl}
             alt="BC Refrigeração Logo Oficial"
-            className={`${dimensions.img} object-contain z-10 transition-transform duration-500 scale-[1.32] hover:scale-[1.38]`}
+            className={`${dimensions.img} object-contain z-10`}
             referrerPolicy="no-referrer"
           />
 
