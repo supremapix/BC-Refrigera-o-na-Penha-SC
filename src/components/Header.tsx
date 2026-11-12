@@ -43,6 +43,24 @@ export const Header: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const oldOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.getElementById('mobile-menu-close-btn')?.focus();
+    const key = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { setMobileMenuOpen(false); document.getElementById('mobile-menu-trigger-btn')?.focus(); }
+      if (e.key === 'Tab') {
+        const items = document.querySelectorAll<HTMLElement>('#mobile-accessible-menu-panel a, #mobile-accessible-menu-panel button');
+        const first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {e.preventDefault();last?.focus();}
+        else if (!e.shiftKey && document.activeElement === last) {e.preventDefault();first?.focus();}
+      }
+    };
+    document.addEventListener('keydown',key);
+    return () => {document.body.style.overflow=oldOverflow;document.removeEventListener('keydown',key);};
+  },[mobileMenuOpen]);
+
   // Group cities by region for Áreas Atendidas dropdown
   const regions = {
     "Litoral Imediato": cidadesAtendidas.filter(c => c.region === "Litoral Imediato").slice(0, 5),
@@ -121,7 +139,7 @@ export const Header: React.FC = () => {
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
               <button 
-                id="services-menu-dropdown-btn"
+                id="services-menu-dropdown-btn" aria-expanded={servicesDropdownOpen}
                 className="flex items-center gap-1 hover:text-[#22C7E5] transition-colors py-2 cursor-pointer"
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
               >
@@ -208,7 +226,7 @@ export const Header: React.FC = () => {
               onMouseLeave={() => setAreasDropdownOpen(false)}
             >
               <button 
-                id="areas-menu-dropdown-btn"
+                id="areas-menu-dropdown-btn" aria-expanded={areasDropdownOpen}
                 className="flex items-center gap-1 hover:text-[#22C7E5] transition-colors py-2 cursor-pointer"
                 onClick={() => setAreasDropdownOpen(!areasDropdownOpen)}
               >
@@ -279,7 +297,7 @@ export const Header: React.FC = () => {
               id="mobile-menu-trigger-btn"
               onClick={() => setMobileMenuOpen(true)}
               className="flex flex-col items-center justify-center w-14 h-14 rounded-xl bg-[#0A2540] border border-slate-800 text-white hover:text-[#22C7E5] focus:outline-none focus:ring-2 focus:ring-[#22C7E5] active:scale-95 transition-all cursor-pointer"
-              aria-label="Abrir Menu Principal"
+              aria-label="Abrir Menu Principal" aria-expanded={mobileMenuOpen} aria-controls="mobile-accessible-menu-panel"
             >
               <Menu size={28} />
               <span className="text-[10px] uppercase font-black tracking-widest mt-0.5">MENU</span>
@@ -292,7 +310,7 @@ export const Header: React.FC = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            id="mobile-accessible-menu-panel"
+            id="mobile-accessible-menu-panel" role="dialog" aria-modal="true" aria-label="Menu principal"
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}

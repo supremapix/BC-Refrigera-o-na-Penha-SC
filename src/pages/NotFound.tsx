@@ -11,6 +11,7 @@ export const NotFound: React.FC = () => {
         title="Página Não Encontrada (404)"
         description="A página procurada não existe ou foi removida temporariamente. Conheça as soluções de refrigeração da BC Refrigeração."
         canonicalPath="/404"
+        noindex
       />
 
       <div className="max-w-2xl text-center space-y-6">

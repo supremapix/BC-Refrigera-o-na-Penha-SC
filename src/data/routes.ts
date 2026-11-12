@@ -36,6 +36,14 @@ export const cidadeRoutes: RouteConfig[] = cidadesAtendidas.map(cidade => ({
 
 export const allRoutesConfigs: RouteConfig[] = [
   ...staticRoutes,
+  { path: '/conserto-lava-e-seca-penha-sc', name: 'Conserto de lava e seca', priority: 0.8, changefreq: 'monthly' },
+  { path: '/assistencia-lava-e-seca-lg-penha', name: 'Lava e seca LG', priority: 0.8, changefreq: 'monthly' },
+  { path: '/assistencia-lava-e-seca-samsung-penha', name: 'Lava e seca Samsung', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/lava-e-seca-penha-sc-guia-completo', name: 'Guia lava e seca', priority: 0.8, changefreq: 'monthly' },
+  { path: '/maquina-de-gelo-comercial-industrial', name: 'Máquina de gelo', priority: 0.8, changefreq: 'monthly' },
+  { path: '/maquina-de-sorvete-comercial-industrial', name: 'Máquina de sorvete', priority: 0.8, changefreq: 'monthly' },
+  { path: '/chopeiras', name: 'Chopeiras', priority: 0.8, changefreq: 'monthly' },
+  { path: '/sistema-rak', name: 'Sistema RAK', priority: 0.8, changefreq: 'monthly' },
   ...serviceRoutes,
   ...bairroRoutes,
   ...cidadeRoutes

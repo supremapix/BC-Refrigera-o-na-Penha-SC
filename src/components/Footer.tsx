@@ -16,33 +16,13 @@ import { companyData, servicesData, cidadesAtendidas } from '../data/siteData';
 
 export function SupremaCredit() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-4 border-t border-slate-800/50 flex justify-center items-center">
-      <div className="bg-slate-950/70 border border-slate-800/80 rounded-full px-6 py-2.5 shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]">
-        <p className="text-slate-200 hover:text-white transition-colors duration-200 text-sm sm:text-base font-bold flex flex-wrap items-center justify-center gap-2">
-          <span className="opacity-90">Desenvolvido com</span>
-          <Heart
-            size={14}
-            className="text-red-500 animate-[pulse_1.5s_infinite] shrink-0 filter drop-shadow-[0_0_3px_rgba(239,68,68,0.7)]"
-          />
-          <span className="opacity-90">por</span>
-          <a
-            id="developer-suprema-link"
-            href="https://supremasite.com.br"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-yellow-400 hover:text-yellow-300 transition-all font-black inline-flex items-center gap-2 cursor-pointer border-b border-dashed border-yellow-400/50 hover:border-yellow-300"
-          >
-            Suprema Sites Express
-            <img
-              src="https://img.supremamidia.com/suprema-img.png"
-              alt="Suprema"
-              className="h-[18px] w-auto inline select-none shrink-0 filter drop-shadow-[0_0_2px_rgba(250,204,21,0.5)] transition-transform duration-300 hover:scale-110"
-              referrerPolicy="no-referrer"
-            />
-          </a>
-        </p>
+    <section aria-label="Criação do site" className="max-w-5xl mx-auto mt-10 px-5">
+      <div className="rounded-2xl border border-slate-700 bg-slate-950 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" aria-label="Conhecer a Suprema Sites Express"><img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema Mídia" width="220" height="80" loading="lazy" className="w-52 h-20 object-contain" /></a>
+        <div><p className="flex items-center justify-center sm:justify-start gap-2 text-slate-200">Desenvolvido com <Heart size={18} aria-label="carinho" className="text-red-400 animate-pulse" /></p><p className="text-xl font-bold text-white mt-1">Suprema Sites Express</p></div>
+        <a id="developer-suprema-link" href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="rounded-xl bg-white text-slate-950 px-5 py-3 font-bold">Conheça nosso site</a>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -183,7 +163,7 @@ export const Footer: React.FC = () => {
 
       {/* Discrete bottom cities list */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800/80 text-[11px] font-bold text-slate-500 text-center space-y-3">
-        <p className="uppercase tracking-widest text-[#22C7E5]">Rede de Atendimento Regional (Mesh de Linkagem SEO):</p>
+        <p className="uppercase tracking-widest text-[#22C7E5]">Cidades atendidas pela BC Refrigeração:</p>
         <div className="flex flex-wrap justify-center gap-x-3 gap-y-1">
           {cidadesAtendidas.map((c, idx) => (
             <React.Fragment key={c.slug}>

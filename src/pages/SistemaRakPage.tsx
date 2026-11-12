@@ -63,8 +63,8 @@ export const SistemaRakPage: React.FC = () => {
       <EnhancedSEO 
         title={pageTitle}
         description={pageDescription}
-        canonical={canonicalUrl}
-        schemas={[serviceSchema, breadcrumbSchema]}
+        canonicalPath={new URL(canonicalUrl).pathname}
+        schema={[serviceSchema, breadcrumbSchema]}
       />
 
       {/* Breadcrumbs */}

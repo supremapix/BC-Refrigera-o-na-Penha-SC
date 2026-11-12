@@ -30,15 +30,17 @@ const descriptions = [
 
 export const HeroTypewriter: React.FC = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState(servicePhrases[0]);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(80);
+  const [paused, setPaused] = useState(false);
 
   // Sync descriptions to transition gracefully
   const [descriptionIndex, setDescriptionIndex] = useState(0);
 
   // Typewriter Core Logic
   useEffect(() => {
+    if (paused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     let timer: NodeJS.Timeout;
     const fullText = servicePhrases[currentPhraseIndex];
 
@@ -80,12 +82,12 @@ export const HeroTypewriter: React.FC = () => {
     timer = setTimeout(handleType, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentPhraseIndex, typingSpeed]);
+  }, [currentText, isDeleting, currentPhraseIndex, typingSpeed, paused]);
 
   return (
     <div className="w-full flex flex-col justify-center items-center lg:items-start text-center lg:text-left font-sans select-none">
       
-      {/* 15 Looping Typographies */}
+      <button type="button" onClick={() => setPaused(!paused)} className="text-sm underline mb-3" aria-pressed={paused}>{paused ? "Retomar apresentação" : "Pausar apresentação"}</button>
       <div className="min-h-[140px] sm:min-h-[160px] lg:min-h-[200px] flex flex-col justify-center w-full">
         <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-tight leading-tight text-white select-text">
           Líder em Refrigeração <br />

@@ -82,7 +82,7 @@ export const ServicePage: React.FC = () => {
     "provider": {
       "@type": "HVACBusiness",
       "name": companyData.name,
-      "image": "https://www.bcrefrigeracaosc.com.br/bc-logo-refrigeracao%20copy%20copy.png",
+      "image": "https://www.bcrefrigeracaosc.com.br/bc-logo.png",
       "telephone": "+554733059452",
       "address": {
         "@type": "PostalAddress",

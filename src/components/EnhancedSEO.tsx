@@ -12,6 +12,7 @@ interface EnhancedSEOProps {
   schema?: Record<string, any> | Record<string, any>[];
   geoPosition?: { lat: number; lng: number };
   geoPlacename?: string;
+  noindex?: boolean;
 }
 
 export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
@@ -19,16 +20,17 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   description,
   canonicalPath = '',
   keywords = [],
-  ogImage = 'https://www.bcrefrigeracaosc.com.br/bc-logo-refrigeracao%20copy%20copy.png',
+  ogImage = 'https://www.bcrefrigeracaosc.com.br/bc-logo.png',
   ogType = 'website',
   schema,
   geoPosition,
-  geoPlacename
+  geoPlacename,
+  noindex = false
 }) => {
   const fullTitle = title.includes(companyData.name)
     ? title
     : `${title} | ${companyData.name}`;
-  const canonicalUrl = `https://www.bcrefrigeracaosc.com.br${canonicalPath}`;
+  const canonicalUrl = `https://www.bcrefrigeracaosc.com.br${canonicalPath.replace(/\/$/, '') || '/'}`;
   
   const defaultKeywords = [
     "refrigeração comercial",
@@ -55,7 +57,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
     "name": companyData.name,
     "legalName": companyData.legalName,
     "image": ogImage,
-    "logo": ogImage,
+    "logo": "https://www.bcrefrigeracaosc.com.br/bc-logo.png",
     "url": "https://www.bcrefrigeracaosc.com.br",
     "telephone": "+554733059452",
     "email": companyData.email,
@@ -117,7 +119,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <meta name="description" content={description.substring(0, 160)} />
       <meta name="keywords" content={mergedKeywords.join(', ')} />
       <link rel="canonical" href={canonicalUrl} />
-      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:title" content={title} />

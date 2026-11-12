@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { companyData } from '../data/siteData';
 import { CheckCircle2, Sparkles, Building2 } from 'lucide-react';
 
 interface PagePromoImageProps {
@@ -31,7 +32,7 @@ export const PagePromoImage: React.FC<PagePromoImageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Text details column (7 cols on desktop) */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <motion.div 
+            <motion.div
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#22C7E5]/10 border border-[#22C7E5]/20 text-[#22C7E5] font-mono text-xs uppercase tracking-widest font-black"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -42,7 +43,7 @@ export const PagePromoImage: React.FC<PagePromoImageProps> = ({
               <span>{badge}</span>
             </motion.div>
 
-            <motion.h3 
+            <motion.h3
               className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight leading-tight"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +53,7 @@ export const PagePromoImage: React.FC<PagePromoImageProps> = ({
               {title}
             </motion.h3>
 
-            <motion.p 
+            <motion.p
               className="text-slate-300 font-semibold text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +64,7 @@ export const PagePromoImage: React.FC<PagePromoImageProps> = ({
             </motion.p>
 
             {/* Checklist highlights */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-left max-w-md sm:max-w-xl mx-auto lg:mx-0"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -80,29 +81,25 @@ export const PagePromoImage: React.FC<PagePromoImageProps> = ({
           </div>
 
           {/* Image Showcase column (5 cols on desktop) */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-5 flex justify-center w-full"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative w-full max-w-md bg-[#0A2540]/60 rounded-3xl p-1.5 shadow-[0_15px_40px_rgba(5,23,38,0.4)] border border-[#22C7E5]/20 hover:border-[#22C7E5]/40 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+            <div className="relative w-[250px] max-w-full bg-[#0A2540]/60 rounded-3xl p-1.5 shadow-[0_15px_40px_rgba(5,23,38,0.4)] border border-[#22C7E5]/20 hover:border-[#22C7E5]/40 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#22C7E5]/5 to-transparent rounded-[22px] pointer-events-none" />
-              
-              <img 
-                src={imageUrl} 
+
+              <img
+                src="/bc-logo.png"
                 alt={title}
-                className="w-full h-auto object-contain rounded-[20px] shadow-inner"
+                width="250" height="250" className="w-[250px] h-[250px] object-contain rounded-[20px] shadow-inner"
                 referrerPolicy="no-referrer"
                 loading="lazy"
               />
 
-              {/* Verified technical team tag */}
-              <div className="absolute bottom-4 left-4 bg-slate-900/90 text-white font-mono text-[9px] sm:text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-xl border border-slate-700/80 backdrop-blur-md flex items-center gap-1.5">
-                <Sparkles size={10} className="text-[#22C7E5] animate-pulse" />
-                <span>Equipe Técnica BC Penha</span>
-              </div>
+              <a href={companyData.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-center text-white font-bold text-base p-3 bg-[#0A2540]">{companyData.phone}<span className="block text-sm text-cyan-200 mt-1">Consultar atendimento</span></a>
             </div>
           </motion.div>
         </div>

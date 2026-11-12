@@ -16,6 +16,7 @@ import {
 import { allLocations, companyData, servicesData, LocationItem } from '../data/siteData';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 import { PagePromoImage } from '../components/PagePromoImage';
+import { NotFound } from './NotFound';
 import { VideoSection } from '../components/VideoSection';
 import { HeroBackgroundVideo } from '../components/HeroBackgroundVideo';
 
@@ -31,17 +32,7 @@ export const LocationPage: React.FC = () => {
     locationItem = allLocations.find(l => l.slug === cidade && l.type === 'cidade');
   }
 
-  // Fallback to Penha Centro if not found
-  if (!locationItem) {
-    locationItem = {
-      name: "Penha (Centro)",
-      slug: "centro",
-      type: "bairro",
-      latitude: -26.7694,
-      longitude: -48.6458,
-      highlightText: "Atendimento imediato na sede da BC Refrigeração em Penha."
-    };
-  }
+  if (!locationItem) return <NotFound />;
 
   const isBairro = locationItem.type === 'bairro';
   const name = locationItem.name;
@@ -52,7 +43,7 @@ export const LocationPage: React.FC = () => {
   // Generate unique SEO text variants programmatically (minimum 500 words per page)
   const paragraph1 = isBairro
     ? `A BC Refrigeração é a principal referência em soluções térmicas no bairro ${name} em Penha/SC. Nossa equipe de técnicos altamente treinados realiza atendimentos domiciliares e corporativos com extrema rapidez. Seja para efetuar o conserto urgente de sua máquina Lava e Seca, realizar a higienização química periódica de um ar-condicionado Split ou prestar assessoria técnica na nossa loja física de peças de reposição, moradores e comerciantes do bairro ${name} contam com uma assistência confiável, transparente e com garantia certificada por escrito.`
-    : `Buscando soluções profissionais de refrigeração comercial e conserto de Container Reefer em ${name}/SC? A BC Refrigeração atende integralmente a cidade de ${name} com visitas técnicas de prontidão para diagnósticos rápidos de compressores, chillers de processo, câmaras frias industriais e aparelhos de climatização de grande porte. Nossa sede em Penha localiza-se a aproximadamente ${distance} km de ${name}, permitindo que nossas equipes móveis equipadas cheguem ao seu endereço em cerca de ${timeMins} minutos para restabelecer a segurança térmica da sua carga ou comércio.`;
+    : `Buscando soluções profissionais de refrigeração comercial e conserto de Container Reefer em ${name}/SC? A BC Refrigeração atende integralmente a cidade de ${name} com visitas técnicas de prontidão para diagnósticos rápidos de compressores, chillers de processo, câmaras frias industriais e aparelhos de climatização de grande porte. Nossa sede em Penha localiza-se a aproximadamente ${distance} km de ${name}, A disponibilidade de visita e o prazo de deslocamento devem ser confirmados com a equipe de acordo com o endereço e o equipamento.`;
 
   const paragraph2 = isBairro
     ? `No bairro ${name}, entendemos que a proximidade de nossa sede no Centro facilita a logística de atendimento de emergência. Muitas famílias e proprietários de pousadas ou restaurantes tradicionais de Penha dependem de eletrodomésticos e refrigeradores operando em alta capacidade. Realizamos a troca de borrachas magnéticas de geladeiras, reparos mecânicos de centrifugação em lava e seca e carga de gás ecologicamente correto de forma ágil. Escolher a BC Refrigeração para o bairro ${name} é optar por atendimento humanizado e preço justo.`
@@ -100,20 +91,20 @@ export const LocationPage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
     "name": `BC Refrigeração - Assistência em ${name}`,
-    "image": "https://www.bcrefrigeracaosc.com.br/bc-logo-refrigeracao%20copy%20copy.png",
+    "image": "https://www.bcrefrigeracaosc.com.br/bc-logo.png",
     "telephone": "+554733059452",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": isBairro ? "Penha" : name,
+      "addressLocality": companyData.city,
       "addressRegion": "SC",
-      "postalCode": isBairro ? companyData.zip : "",
+      "postalCode": companyData.zip,
       "addressCountry": "BR"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": locationItem.latitude,
-      "longitude": locationItem.longitude
+      "latitude": companyData.latitude,
+      "longitude": companyData.longitude
     },
     "areaServed": {
       "@type": "Place",
@@ -191,7 +182,7 @@ export const LocationPage: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              ⚡ Distância de Penha: {distance} km • Deslocamento em ~{timeMins} minutos • Suporte 24h
+              Atendimento a partir de Penha • Consulte disponibilidade e prazo para sua região
             </motion.p>
           )}
         </div>

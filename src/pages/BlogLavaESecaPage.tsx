@@ -71,7 +71,7 @@ export const BlogLavaESecaPage: React.FC = () => {
       "name": "BC Refrigeração",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.bcrefrigeracaosc.com.br/bc-logo-refrigeracao%20copy%20copy.png"
+        "url": "https://www.bcrefrigeracaosc.com.br/bc-logo.png"
       }
     },
     "mainEntityOfPage": {

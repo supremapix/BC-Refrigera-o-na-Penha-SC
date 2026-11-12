@@ -34,17 +34,17 @@ function ScrollToTop() {
   return null;
 }
 
-export default function App() {
+export function AppContent() {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
+    <>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-[#22C7E5] selection:text-[#051726]">
           {/* Main header block */}
           <Header />
           
           {/* Main viewport */}
-          <main className="flex-grow">
+          <a href="#conteudo" className="skip-link">Pular para o conteúdo</a>
+          <main id="conteudo" tabIndex={-1} className="flex-grow">
             <Routes>
               {/* Home Page Route */}
               <Route path="/" element={<Home />} />
@@ -88,7 +88,8 @@ export default function App() {
           {/* Back to top & Share Utilities */}
           <FloatingUtilities />
         </div>
-      </BrowserRouter>
-    </HelmetProvider>
+    </>
   );
 }
+
+export default function App() { return <HelmetProvider><BrowserRouter><AppContent /></BrowserRouter></HelmetProvider>; }
