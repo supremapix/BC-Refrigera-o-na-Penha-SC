@@ -51,6 +51,20 @@ export const LocationPage: React.FC = () => {
 
   const paragraph3 = `Adicionalmente aos atendimentos corretivos comuns, a BC Refrigeração especializa-se no fornecimento de projetos avançados sob medida de engenharia de frio, incluindo a montagem de Walk-in Coolers panorâmicos, adegas elegantes do tipo Beer Cave, e assistência preventiva profunda em sistemas de Chillers industriais de processos fabris. Unindo técnicos certificados, agilidade no deslocamento a partir de Penha e peças originais a pronta entrega em nosso balcão, garantimos a máxima eficiência térmica do litoral de Santa Catarina ao Vale do Itajaí.`;
 
+  // Practical consultation guidance for existing pages with search demand.
+  const consultationGuide = !isBairro ? ({
+    'balneario-camboriu': {
+      title: 'Prepare o chamado em Balneário Camboriú',
+      text: 'Para pedir avaliação de ar-condicionado, lava e seca ou refrigeração comercial, informe o equipamento, a marca, o modelo e o sintoma observado. Em apartamentos e condomínios, avise sobre portaria, regras de acesso e localização da unidade externa. Isso ajuda a equipe a entender o chamado antes de combinar a visita a partir de Penha.',
+      items: ['Envie foto da etiqueta do equipamento e do código de erro, se houver, sem desmontar proteções.', 'Informe bairro, endereço e se o atendimento será em residência ou estabelecimento comercial.', 'Confirme disponibilidade, deslocamento, valor da avaliação e condições do orçamento antes de agendar.'],
+    },
+    'barra-velha': {
+      title: 'O que informar ao pedir assistência em Barra Velha',
+      text: 'Se uma geladeira, câmara fria ou outro equipamento perdeu rendimento, descreva quando a falha começou e se ela é contínua ou intermitente. Em equipamentos comerciais, informe a temperatura indicada no painel e o tipo de uso. Esses dados orientam a conversa inicial; não substituem o diagnóstico técnico nem confirmam a disponibilidade de peças.',
+      items: ['Separe marca, modelo e uma foto legível da identificação do equipamento.', 'Informe bairro, endereço, acesso ao local e o melhor período para conversar com a equipe.', 'Pergunte sobre disponibilidade de visita a partir de Penha, taxa de deslocamento e aprovação do orçamento.'],
+    },
+  } as Record<string, { title: string; text: string; items: string[] }>)[locationItem.slug] : undefined;
+
   // Get 6 neighbor locations to build the link grid (linking mesh)
   const neighbors = allLocations
     .filter(l => l.slug !== locationItem?.slug)
@@ -200,7 +214,16 @@ export const LocationPage: React.FC = () => {
               </h2>
               <p>{paragraph1}</p>
               <p>{paragraph2}</p>
-              <p>{paragraph3}</p>
+              {consultationGuide ? (
+                <section aria-label={consultationGuide.title} className="space-y-4">
+                  <h3 className="text-lg font-bold text-slate-900">{consultationGuide.title}</h3>
+                  <p>{consultationGuide.text}</p>
+                  <ul className="list-disc pl-5 space-y-2">
+                    {consultationGuide.items.map(item => <li key={item}>{item}</li>)}
+                  </ul>
+                  <p>Não abra painéis elétricos nem manuseie o circuito refrigerante. Em caso de risco, interrompa o uso e procure orientação técnica.</p>
+                </section>
+              ) : <p>{paragraph3}</p>}
               <div className="p-5 rounded-2xl bg-[#E8F6FB] border border-[#22C7E5]/20 flex flex-col sm:flex-row gap-4 items-center justify-between">
                 <div>
                   <h4 className="font-black uppercase text-slate-900 text-sm">Precisa de orçamento imediato?</h4>
