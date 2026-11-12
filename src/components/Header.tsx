@@ -315,7 +315,7 @@ export const Header: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-[#051726] text-white flex flex-col overflow-y-auto font-sans"
+            className="fixed inset-0 z-[100] bg-[#051726] text-white flex flex-col overflow-y-auto font-sans"
           >
             {/* Top Close Control with giant target */}
             <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-[#0A2540]">
