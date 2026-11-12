@@ -122,7 +122,7 @@ export const Home: React.FC = () => {
       />
 
       {/* 1. HERO SECTION WITH VIDEO BACKGROUND & LIVE TYPEWRITER */}
-      <section className="relative bg-[#051726] text-white pt-16 pb-28 lg:pt-28 lg:pb-36 px-4 overflow-hidden border-b border-slate-900">
+      <section id="bc-home-hero" className="relative bg-[#051726] text-white pt-16 pb-28 lg:pt-28 lg:pb-36 px-4 overflow-hidden border-b border-slate-900">
         
         {/* Dynamic Background Video Component */}
         <HeroBackgroundVideo />
