@@ -49,7 +49,7 @@ export const LocationPage: React.FC = () => {
     ? `No bairro ${name}, entendemos que a proximidade de nossa sede no Centro facilita a logística de atendimento de emergência. Muitas famílias e proprietários de pousadas ou restaurantes tradicionais de Penha dependem de eletrodomésticos e refrigeradores operando em alta capacidade. Realizamos a troca de borrachas magnéticas de geladeiras, reparos mecânicos de centrifugação em lava e seca e carga de gás ecologicamente correto de forma ágil. Escolher a BC Refrigeração para o bairro ${name} é optar por atendimento humanizado e preço justo.`
     : `O polo comercial e logístico de ${name}/SC necessita de sistemas térmicos impecáveis para evitar prejuízos operacionais. Por estar inserida na macrorregião atendida pela nossa empresa num raio de 200 km, a cidade de ${name} usufrui de contratos de manutenção preventiva (PMOC) para ar-condicionado comercial e câmaras frigoríficas de congelados de pescados e alimentos. Atuamos com as marcas mais renomadas do mercado e oferecemos plantão aos sábados para garantir que seu estoque ou container reefer opere perfeitamente.`;
 
-  const paragraph3 = `Adicionalmente aos atendimentos corretivos comuns, a BC Refrigeração especializa-se no fornecimento de projetos avançados sob medida de engenharia de frio, incluindo a montagem de Walk-in Coolers panorâmicos, adegas elegantes do tipo Beer Cave, e assistência preventiva profunda em sistemas de Chillers industriais de processos fabris. Unindo técnicos certificados, agilidade no deslocamento a partir de Penha e peças originais a pronta entrega em nosso balcão, garantimos a máxima eficiência térmica do litoral de Santa Catarina ao Vale do Itajaí.`;
+  const paragraph3 = `Adicionalmente aos atendimentos corretivos comuns, a BC Refrigeração especializa-se no fornecimento de projetos avançados sob medida de engenharia de frio, incluindo a montagem de Walk-in Coolers panorâmicos, adegas elegantes do tipo Beer Cave, e assistência preventiva profunda em sistemas de Chillers industriais de processos fabris. Consulte a equipe sobre o diagnóstico, as peças compatíveis e sua disponibilidade. O agendamento e o prazo de atendimento a partir de Penha dependem do endereço e do equipamento.`;
 
   // Practical consultation guidance for existing pages with search demand.
   const consultationGuide = !isBairro ? ({
@@ -272,8 +272,8 @@ export const LocationPage: React.FC = () => {
                 <div className="flex gap-3">
                   <CheckCircle className="text-emerald-500 shrink-0 w-5 h-5" />
                   <div>
-                    <h4 className="font-bold text-slate-900 text-sm">Plantão Ágil de Deslocamento</h4>
-                    <p className="text-xs text-slate-600 mt-1">Nossos carros de oficina móvel estão sempre prontos com manifold digitais e soldas.</p>
+                    <h4 className="font-bold text-slate-900 text-sm">Consulte o Deslocamento</h4>
+                    <p className="text-xs text-slate-600 mt-1">Informe o endereço e o equipamento para confirmar a disponibilidade da equipe e o prazo de visita.</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -293,8 +293,8 @@ export const LocationPage: React.FC = () => {
                 <div className="flex gap-3">
                   <ShieldCheck className="text-[#22C7E5] shrink-0 w-5 h-5" />
                   <div>
-                    <h4 className="font-bold text-slate-900 text-sm">Peças Originais Próprias</h4>
-                    <p className="text-xs text-slate-600 mt-1">Nossa própria loja de peças em Penha garante componentes imediatos e homologados.</p>
+                    <h4 className="font-bold text-slate-900 text-sm">Consulta de Peças</h4>
+                    <p className="text-xs text-slate-600 mt-1">Consulte a loja em Penha sobre compatibilidade, procedência, disponibilidade e prazo das peças para o seu equipamento.</p>
                   </div>
                 </div>
               </div>
@@ -313,7 +313,7 @@ export const LocationPage: React.FC = () => {
                 </div>
                 <div className="border-b border-slate-100 pb-4 last:border-b-0 last:pb-0">
                   <h4 className="font-bold text-slate-900 text-sm">Qual o valor da taxa de visita técnica para {name}?</h4>
-                  <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">O valor da taxa de deslocamento e avaliação técnica para a região de {name} é bastante competitivo e costuma ser abatido integralmente do orçamento caso o conserto seja aprovado e executado por nossas equipes.</p>
+                  <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">Consulte o valor da visita e do deslocamento para {name} antes de agendar. Pergunte se existe abatimento em caso de aprovação do conserto e quais condições se aplicam; não presuma que a avaliação está incluída.</p>
                 </div>
                 <div className="border-b border-slate-100 pb-4 last:border-b-0 last:pb-0">
                   <h4 className="font-bold text-slate-900 text-sm">Como funciona o agendamento em {name}?</h4>
@@ -368,7 +368,7 @@ export const LocationPage: React.FC = () => {
             {!isBairro && (
               <div className="bg-[#E8F6FB] p-5 rounded-3xl border border-[#22C7E5]/15 text-xs space-y-2">
                 <p className="font-bold text-slate-900">⚡ Informações de Rota:</p>
-                <p className="text-slate-600 leading-relaxed">As saídas das equipes de Penha/SC em direção a {name} utilizam as rodovias principais catarinenses (como BR-101 e acessos secundários), garantindo tempos mínimos de trânsito em chamados urgentes.</p>
+                <p className="text-slate-600 leading-relaxed">Para atendimento em {name}, confirme a disponibilidade de saída a partir de Penha e o prazo estimado com a equipe. Trânsito, acesso ao endereço e agenda podem afetar o deslocamento.</p>
               </div>
             )}
           </div>
@@ -378,8 +378,9 @@ export const LocationPage: React.FC = () => {
       {/* Custom Promo Image Section tailored to the current location */}
       <PagePromoImage 
         title={`Atendimento Logístico de Refrigeração para ${name} / SC`}
-        description={`Nossas viaturas de suporte móvel partem diretamente de nossa sede própria e centralizada em Penha para prestar atendimento técnico de alta confiabilidade em ${name}. Garantia de peças originais e agilidade no diagnóstico.`}
+        description={`Nossas viaturas de suporte móvel partem diretamente de nossa sede própria e centralizada em Penha para prestar atendimento técnico de alta confiabilidade em ${name}. Consulte a disponibilidade de peças e combine as condições da visita antes do atendimento.`}
         badge="Sede Própria & Frota Local"
+        highlights={["Atendimento a partir de Penha", "Peças e disponibilidade sob consulta", "Confirme as condições da visita"]}
       />
 
       {/* Video section before the footer */}
