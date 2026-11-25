@@ -21,6 +21,7 @@ import { MaquinaGeloPage } from './pages/MaquinaGeloPage';
 import { MaquinaSorvetePage } from './pages/MaquinaSorvetePage';
 import { ChopeirasPage } from './pages/ChopeirasPage';
 import { SistemaRakPage } from './pages/SistemaRakPage';
+import { HistoriaTransporteRefrigerado } from './pages/HistoriaTransporteRefrigerado';
 import { FloatingUtilities } from './components/FloatingUtilities';
 
 // Simple helper to scroll to top on every navigation transition
@@ -58,6 +59,7 @@ export function AppContent() {
               <Route path="/assistencia-lava-e-seca-samsung-penha" element={<LavaESecaSamsungPage />} />
               <Route path="/blog/lava-e-seca-penha-sc-guia-completo" element={<BlogLavaESecaPage />} />
               
+              <Route path="/blog/historia-do-transporte-refrigerado" element={<HistoriaTransporteRefrigerado />} />
               {/* Refrigeração Comercial e Industrial Routes */}
               <Route path="/maquina-de-gelo-comercial-industrial" element={<MaquinaGeloPage />} />
               <Route path="/maquina-de-gelo-comercial-industrial/" element={<MaquinaGeloPage />} />

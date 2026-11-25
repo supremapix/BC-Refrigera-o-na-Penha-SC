@@ -36,6 +36,7 @@ export const cidadeRoutes: RouteConfig[] = cidadesAtendidas.map(cidade => ({
 
 export const allRoutesConfigs: RouteConfig[] = [
   ...staticRoutes,
+  { path: '/blog/historia-do-transporte-refrigerado', name: 'História do transporte refrigerado', priority: 0.7, changefreq: 'monthly' },
   { path: '/conserto-lava-e-seca-penha-sc', name: 'Conserto de lava e seca', priority: 0.8, changefreq: 'monthly' },
   { path: '/assistencia-lava-e-seca-lg-penha', name: 'Lava e seca LG', priority: 0.8, changefreq: 'monthly' },
   { path: '/assistencia-lava-e-seca-samsung-penha', name: 'Lava e seca Samsung', priority: 0.8, changefreq: 'monthly' },

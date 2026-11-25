@@ -374,6 +374,10 @@ export const ServicePage: React.FC = () => {
         </div>
       </section>
 
+      {service.slug === 'conserto-container-reefer' && (
+        <section className="max-w-7xl mx-auto px-4 my-8" aria-labelledby="historia-transporte-link"><h2 id="historia-transporte-link" className="text-xl font-black mb-2">Leitura relacionada</h2><p><Link to="/blog/historia-do-transporte-refrigerado" className="font-bold underline text-[#0E537B]">Do vagão com gelo ao contêiner reefer: história do transporte refrigerado</Link></p></section>
+      )}
+
       {/* Custom Promo Image Section tailored to the current service */}
       <PagePromoImage 
         title={`Estrutura Especializada para Atendimento de ${service.title}`}
